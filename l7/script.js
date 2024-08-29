@@ -182,15 +182,15 @@ function pauseSong() {
     playBtn.innerHTML = '<i class="fas fa-play"></i>';
 }
 
-// الأغنية السابقة
-function prevSong() {
+// الأغنية التالية
+function nextSong() {
     songIndex = (songIndex - 1 + songs.length) % songs.length;
     loadSong(songs[songIndex]);
     playSong();
 }
 
-// الأغنية التالية
-function nextSong() {
+// الأغنية السابقة
+function prevSong() {
     songIndex = isShuffling ? getRandomSongIndex() : (songIndex + 1) % songs.length;
     loadSong(songs[songIndex]);
     playSong();
