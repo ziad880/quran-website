@@ -205,3 +205,6 @@ html, body {
     font-size: 1.9em;
     margin: 10px;
 }
+a {
+  -webkit-tap-highlight-color: transparent;
+}
