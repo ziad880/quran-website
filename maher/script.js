@@ -257,7 +257,7 @@ audio.addEventListener('ended', () => {
     if (isRepeating) {
         playSong();
     } else {
-        nextSong();
+        prevSong();
     }
 });
 
