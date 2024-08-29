@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700;800&display=swap');
+@font-face {
+    font-family: 'CustomFont';
+    src:url('fonts/arbfonts_Qurraan_sora.otf') format('woff2'),
+        url('fonts/arbfonts_Qurraan_sora.otf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: url('bac.jpg');
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+
+}
+.player-container {
+    background-color: rgb(56 62 76 / 14%);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin-bottom: 0px;
+    max-width: 300px;
+    margin-top: -20px;
+}
+.player-container1 {
+    background-color: rgb(56 62 76 / 14%);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin: 20px;
+    max-width: 300px;
+
+}
+#album-cover {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 0px;
+}
+
+#title {
+    font-family: 'CustomFont', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    margin:  0;
+}
+#time{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+#artist {
+    font-size: 14px;
+    color: #b3b3b3;
+    margin: 0px;
+}
+/* حاوية الأزرار */
+.button-container {
+    display: flex;
+    justify-content: center; /* توسيط الأزرار أفقياً */
+    align-items: center; /* توسيط الأزرار عمودياً */
+    gap: 10px; /* مسافة بين الأزرار */
+}
+.progress-container {
+    background: #404040;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 4px;
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+#r{
+    margin-top: 10px;
+}
+.progress {
+    background: #1db954;
+    border-radius: 5px;
+    height: 100%;
+    width: 0;
+}
+#current-time,
+#total-time {
+    font-size: 12px;
+    color: #b3b3b3;
+    margin: 0 5px;
+}
+#controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: transform 0.2s;
+}
+button:hover {
+    transform: scale(1.1);
+
+}
+#play {
+    color: #1db954;
+}
+#prev, #next {
+    color: #b3b3b3;
+}
+#repeat.active, #shuffle.active {
+    color: #1db954;
+}
+/* حاوية شريط التمرير */
+.song-slider-container {
+    direction: rtl; /* ضبط الاتجاه من اليمين إلى اليسار */
+    overflow: hidden; /* إخفاء شريط التمرير ومنع التمرير */
+    white-space: nowrap; /* منع التفاف النصوص */
+    -webkit-overflow-scrolling: touch; /* تمكين التمرير السلس على الأجهزة اللمسية */
+    padding: 10px;
+    margin: 0;
+    scrollbar-width: none; /* إخفاء شريط التمرير في Firefox */
+    width: 100%; /* تأكد من أن الحاوية تأخذ عرضًا كاملًا */
+    box-sizing: border-box; /* تضمين padding و border في العرض الإجمالي */
+}
+.song-slider-container::-webkit-scrollbar {
+    display: none;
+}
+.song-slider {
+    display: flex; /* استخدام flexbox لعرض العناصر في صف */
+    list-style: none; /* إزالة نقاط القائمة */
+    padding: 0;
+    margin: 0;
+}
+/* عناصر القائمة */
+.song-item {
+    font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-right: 10px;
+    white-space: nowrap;
+    color: #ffffff;
+    background-color: transparent;
+    border: none;
+    text-shadow: 0 -1px 7px #000000;
+}
+.song-item:hover {
+    transform: scale(1.2);
+}
+/* حاوية القصة */
+.song-slider-container {
+    max-width: calc(10 * (10px + 15px)); 
+    box-sizing: border-box;
+}
+.song-item:hover {
+    background-color: transparent; /* إزالة اللون الأبيض عند التمرير */
+}
+html, body {
+    overflow: hidden; /* إخفاء شريط التمرير ومنع التمرير */
+    height: 100%; /* تأكد من أن ارتفاع الصفحة يأخذ العرض الكامل */
+    margin: 0; /* إزالة الهوامش الافتراضية */
+    padding: 0; /* إزالة التباعد الافتراضي */
+}
+#by{
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.socials a{
+    font-size: 1em;
+    padding: 8px;
+    margin-left: 5px;
+    transition: 0.5s ease;
+
+}
+.socials a:hover{
+    font-size: 1.1em;
+}
+#p1{
+    font-family: "Lateef", serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    margin:  0;
+}
+#back{
+    font-size: 1.9em;
+    margin: 10px;
+}
