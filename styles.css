@@ -167,6 +167,7 @@ button:hover {
 .song-slider-container {
     max-width: calc(10 * (10px + 15px)); 
     box-sizing: border-box;
+    margin-left: 31px;
 }
 .song-item:hover {
     background-color: transparent; /* إزالة اللون الأبيض عند التمرير */
