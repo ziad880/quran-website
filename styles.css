@@ -177,6 +177,8 @@ html, body {
     height: 100%; /* تأكد من أن ارتفاع الصفحة يأخذ العرض الكامل */
     margin: 0; /* إزالة الهوامش الافتراضية */
     padding: 0; /* إزالة التباعد الافتراضي */
+    display: flex;
+    justify-content: center;
 }
 #by{
     font-family: "Lobster", sans-serif;
