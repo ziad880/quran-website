@@ -69,7 +69,7 @@ body {
     display: flex;
     justify-content: center; /* توسيط الأزرار أفقياً */
     align-items: center; /* توسيط الأزرار عمودياً */
-    gap: 10px; /* مسافة بين الأزرار */
+    gap: 0; /* مسافة بين الأزرار */
 }
 .progress-container {
     background: #404040;

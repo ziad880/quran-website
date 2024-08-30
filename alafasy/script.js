@@ -351,3 +351,19 @@ slider.addEventListener('touchmove', (e) => {
     const walk = (x - startX) * 2; // سرعة التمرير
     slider.scrollLeft = scrollLeft - walk;
 });
+document.addEventListener('DOMContentLoaded', () => {
+    const audioPlayer = document.getElementById('audio');
+
+    // تأكيد أن عناصر التحكم موجودة
+    if (audioPlayer) {
+        // تقديم الصوت بمقدار 10 ثوانٍ
+        document.getElementById('forward').addEventListener('click', () => {
+            audioPlayer.currentTime = Math.min(audioPlayer.currentTime + 10, audioPlayer.duration);
+        });
+
+        // تأخير الصوت بمقدار 10 ثوانٍ
+        document.getElementById('rewind').addEventListener('click', () => {
+            audioPlayer.currentTime = Math.max(audioPlayer.currentTime - 10, 0);
+        });
+    }
+    });
