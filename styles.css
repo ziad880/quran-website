@@ -1,13 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700;800&display=swap');
+
 @font-face {
     font-family: 'CustomFont';
-    src:url('fonts/arbfonts_Qurraan_sora.otf') format('woff2'),
+    src: url('fonts/arbfonts_Qurraan_sora.otf') format('woff2'),
         url('fonts/arbfonts_Qurraan_sora.otf') format('woff');
     font-weight: normal;
     font-style: normal;
 }
+
 body {
     font-family: Arial, sans-serif;
     background: url('bac.jpg');
@@ -18,9 +20,10 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-
 }
-.player-container {
+
+.player-container,
+.player-container1 {
     background-color: rgb(56 62 76 / 14%);
     padding: 15px;
     border-radius: 10px;
@@ -30,21 +33,16 @@ body {
     max-width: 300px;
     margin-top: -10px;
 }
-.player-container1 {
-    background-color: rgb(56 62 76 / 14%);
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    margin: 20px;
-    max-width: 300px;
 
+.player-container {
+    margin-top: -10px;
 }
+
 #album-cover {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 #title {
@@ -52,27 +50,29 @@ body {
     font-size: 30px;
     font-weight: bold;
     color: #fff;
-    margin:  0;
+    margin: 0;
 }
-#time{
+
+#time {
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
 }
+
 #artist {
     font-size: 14px;
     color: #b3b3b3;
-    margin: 0px;
+    margin: 0;
 }
-/* حاوية الأزرار */
+
 .button-container {
-    display: flex; /* استخدام Flexbox لتوزيع الأزرار بالتساوي */
-    justify-content: space-between; /* توزيع الأزرار بالتساوي مع الحفاظ على المسافات */
-    align-items: center; /* محاذاة العناصر بشكل عمودي في المنتصف */
-    width: 100%; /* التأكد من أن الحاوية تأخذ العرض الكامل المتاح */
-    padding: 10px; /* إضافة تباعد داخلي حول الأزرار */
-    box-sizing: border-box; /* التأكد من أن التباعد الداخلي لا يؤثر على العرض الكلي */
-    overflow: hidden; /* منع العناصر من الخروج خارج الحاوية */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .progress-container {
@@ -86,26 +86,31 @@ body {
     display: flex;
     align-items: center;
 }
-#r{
+
+#r {
     margin-top: 10px;
 }
+
 .progress {
     background: #1db954;
     border-radius: 5px;
     height: 100%;
     width: 0;
 }
+
 #current-time,
 #total-time {
     font-size: 12px;
     color: #b3b3b3;
     margin: 0 5px;
 }
+
 #controls {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 button {
     background: none;
     border: none;
@@ -115,41 +120,46 @@ button {
     margin: 0 10px;
     transition: transform 0.2s;
 }
+
 button:hover {
     transform: scale(1.1);
-
 }
+
 #play {
     color: #1db954;
 }
+
 #prev, #next {
     color: #b3b3b3;
 }
+
 #repeat.active, #shuffle.active {
     color: #1db954;
 }
-/* حاوية شريط التمرير */
+
 .song-slider-container {
-    direction: rtl; /* ضبط الاتجاه من اليمين إلى اليسار */
-    overflow: hidden; /* إخفاء شريط التمرير ومنع التمرير */
-    white-space: nowrap; /* منع التفاف النصوص */
-    -webkit-overflow-scrolling: touch; /* تمكين التمرير السلس على الأجهزة اللمسية */
+    direction: rtl;
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
     padding: 10px;
     margin: 0;
-    scrollbar-width: none; /* إخفاء شريط التمرير في Firefox */
-    width: 100%; /* تأكد من أن الحاوية تأخذ عرضًا كاملًا */
-    box-sizing: border-box; /* تضمين padding و border في العرض الإجمالي */
+    margin-top: -15px;
+    scrollbar-width: none;
+    width: 100%;
+    box-sizing: border-box;
 }
+
 .song-slider-container::-webkit-scrollbar {
     display: none;
 }
-.song-slider {
 
-    list-style: none; /* إزالة نقاط القائمة */
+.song-slider {
+    list-style: none;
     padding: 0;
     margin: 0;
 }
-/* عناصر القائمة */
+
 .song-item {
     font-family: "IBM Plex Sans Arabic", sans-serif;
     font-weight: 700;
@@ -164,103 +174,116 @@ button:hover {
     border: none;
     text-shadow: 0 -1px 7px #000000;
 }
+
 .song-item:hover {
     transform: scale(1.2);
+    background-color: transparent;
 }
-/* حاوية القصة */
+
 .song-slider-container {
-    max-width: calc(9 * (10px + 20px)); 
+    max-width: calc(9 * (10px + 20px));
     box-sizing: border-box;
+}
 
-}
-.song-item:hover {
-    background-color: transparent; /* إزالة اللون الأبيض عند التمرير */
-}
 html, body {
-    overflow: hidden; /* إخفاء شريط التمرير ومنع التمرير */
-    height: 100%; /* تأكد من أن ارتفاع الصفحة يأخذ العرض الكامل */
-    margin: 0; /* إزالة الهوامش الافتراضية */
-    padding: 0; /* إزالة التباعد الافتراضي */
-
+    overflow: hidden;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
-#by{
+
+#by {
     font-family: "Lobster", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
-.socials a{
+
+.socials a {
     font-size: 1em;
     padding: 8px;
     margin-left: 5px;
     transition: 0.5s ease;
-
 }
-.socials a:hover{
+
+.socials a:hover {
     font-size: 1.1em;
 }
-#p1{
+
+#p1 {
     font-family: "Lateef", serif;
     font-weight: 200;
     font-style: normal;
     font-size: 30px;
     font-weight: bold;
     color: #fff;
-    margin:  0;
+    margin: 0;
 }
-#back{
-    font-size: 1.9em;
+
+#back {
+    font-size: 1.5em;
     margin: 10px;
 }
+
 a {
     -webkit-tap-highlight-color: transparent;
 }
+
 .song-slider-container {
-    overflow-x: auto; /* تمكين التمرير الأفقي */
-    white-space: nowrap; /* منع التفاف العناصر */
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 .song-item {
-    display: inline-block; /* عرض العناصر بشكل متجاور */
-    margin-right: 10px; /* مسافة بين العناصر */
+    display: inline-block;
+    margin-right: 10px;
 }
-.song-item.active {
-    color: rgb(255, 255, 255); /* تغيير لون النص إلى الأخضر */
-    font-weight: bold; /* جعل النص عريضًا لجعله بارزًا */
-    z-index: 2; /* جعل العنصر النشط في الأعلى */
-    font-size: 18.5px; /* زيادة حجم النص للأغنية النشطة */
-    transform: scale(1.15); /* تكبير النص بنسبة 10% */
-    text-shadow: 0 3px 10px green; /* إضافة ظل أبيض للنص */
-}
-.song-list {
-    overflow-x: auto; /* السماح بالتمرير الأفقي */
-    scroll-behavior: smooth; /* التمرير السلس لجميع المتصفحات */
-    -webkit-overflow-scrolling: touch; /* تحسين التمرير للأجهزة التي تعمل باللمس مثل iPhone */
-}
-.button-container button {
-    flex: 1; /* جعل الأزرار تأخذ حيزًا متساويًا داخل الحاوية */
-    margin: 0 5px; /* إضافة مسافات بين الأزرار */
-    max-width: 50px; /* تحديد الحد الأقصى لعرض الأزرار */
-    max-height: 50px; /* تحديد الحد الأقصى لارتفاع الأزرار */
 
-    border: none; /* إزالة الإطار الافتراضي للأزرار */
-    border-radius: 5px; /* جعل زوايا الأزرار مستديرة */
-    transition: transform 0.2s ease; /* إضافة تأثير عند التفاعل مع الأزرار */
+.song-item.active {
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    z-index: 2;
+    font-size: 18.5px;
+    transform: scale(1.15);
+    text-shadow: 0 3px 10px green;
+}
+
+.song-list {
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.button-container button {
+    flex: 1;
+    margin: 0 5px;
+    max-width: 50px;
+    max-height: 50px;
+    display: flex;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    transition: transform 0.2s ease;
 }
 
 .button-container button:active {
-    transform: scale(0.95); /* تقليل حجم الزر قليلاً عند الضغط عليه */
+    transform: scale(1.15);
 }
+
 .button-container button:focus {
-    outline: none; /* إزالة الإطار الخارجي عند النقر */
+    outline: none;
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
 }
 
 @media (max-width: 600px) {
     .button-container {
-        padding: 5px; /* تقليل التباعد الداخلي للحاوية على الشاشات الأصغر */
+        padding: 5px;
     }
 
     .button-container button {
-        max-width: 40px; /* تقليل عرض الأزرار قليلاً للشاشات الأصغر */
-        max-height: 40px; /* تقليل ارتفاع الأزرار قليلاً للشاشات الأصغر */
+        max-width: 40px;
+        max-height: 40px;
     }
 }
