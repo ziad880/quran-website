@@ -381,8 +381,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const activeSongItem = document.querySelector(`.song-item[data-song-index="${songIndex}"]`);
         if (activeSongItem) {
             activeSongItem.classList.add('active');
-            // تمرير الشريط لعرض العنصر النشط
-            activeSongItem.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+            // تمرير الشريط لعرض العنصر النشط بدون تغيير مواقع العناصر الأخرى
+            activeSongItem.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'nearest', // يضمن أن التمرير يحدث فقط عند الضرورة
+                inline: 'center'  // الحفاظ على العنصر في المركز أفقيًا
+            });
         }
     }
     

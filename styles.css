@@ -28,7 +28,7 @@ body {
     text-align: center;
     margin-bottom: 0px;
     max-width: 300px;
-    margin-top: -20px;
+    margin-top: -10px;
 }
 .player-container1 {
     background-color: rgb(56 62 76 / 14%);
@@ -66,11 +66,15 @@ body {
 }
 /* حاوية الأزرار */
 .button-container {
-    display: flex;
-    justify-content: center; /* توسيط الأزرار أفقياً */
-    align-items: center; /* توسيط الأزرار عمودياً */
-    gap: 1px; /* مسافة بين الأزرار */
+    display: flex; /* استخدام Flexbox لتوزيع الأزرار بالتساوي */
+    justify-content: space-between; /* توزيع الأزرار بالتساوي مع الحفاظ على المسافات */
+    align-items: center; /* محاذاة العناصر بشكل عمودي في المنتصف */
+    width: 100%; /* التأكد من أن الحاوية تأخذ العرض الكامل المتاح */
+    padding: 10px; /* إضافة تباعد داخلي حول الأزرار */
+    box-sizing: border-box; /* التأكد من أن التباعد الداخلي لا يؤثر على العرض الكلي */
+    overflow: hidden; /* منع العناصر من الخروج خارج الحاوية */
 }
+
 .progress-container {
     background: #404040;
     border-radius: 5px;
@@ -140,7 +144,7 @@ button:hover {
     display: none;
 }
 .song-slider {
-    display: flex; /* استخدام flexbox لعرض العناصر في صف */
+
     list-style: none; /* إزالة نقاط القائمة */
     padding: 0;
     margin: 0;
@@ -226,4 +230,37 @@ a {
     font-size: 18.5px; /* زيادة حجم النص للأغنية النشطة */
     transform: scale(1.15); /* تكبير النص بنسبة 10% */
     text-shadow: 0 3px 10px green; /* إضافة ظل أبيض للنص */
+}
+.song-list {
+    overflow-x: auto; /* السماح بالتمرير الأفقي */
+    scroll-behavior: smooth; /* التمرير السلس لجميع المتصفحات */
+    -webkit-overflow-scrolling: touch; /* تحسين التمرير للأجهزة التي تعمل باللمس مثل iPhone */
+}
+.button-container button {
+    flex: 1; /* جعل الأزرار تأخذ حيزًا متساويًا داخل الحاوية */
+    margin: 0 5px; /* إضافة مسافات بين الأزرار */
+    max-width: 50px; /* تحديد الحد الأقصى لعرض الأزرار */
+    max-height: 50px; /* تحديد الحد الأقصى لارتفاع الأزرار */
+
+    border: none; /* إزالة الإطار الافتراضي للأزرار */
+    border-radius: 5px; /* جعل زوايا الأزرار مستديرة */
+    transition: transform 0.2s ease; /* إضافة تأثير عند التفاعل مع الأزرار */
+}
+
+.button-container button:active {
+    transform: scale(0.95); /* تقليل حجم الزر قليلاً عند الضغط عليه */
+}
+.button-container button:focus {
+    outline: none; /* إزالة الإطار الخارجي عند النقر */
+}
+
+@media (max-width: 600px) {
+    .button-container {
+        padding: 5px; /* تقليل التباعد الداخلي للحاوية على الشاشات الأصغر */
+    }
+
+    .button-container button {
+        max-width: 40px; /* تقليل عرض الأزرار قليلاً للشاشات الأصغر */
+        max-height: 40px; /* تقليل ارتفاع الأزرار قليلاً للشاشات الأصغر */
+    }
 }
