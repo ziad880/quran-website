@@ -165,9 +165,9 @@ button:hover {
 }
 /* حاوية القصة */
 .song-slider-container {
-    max-width: calc(10 * (10px + 15px)); 
+    max-width: calc(9 * (10px + 20px)); 
     box-sizing: border-box;
-    margin-left: 31px;
+
 }
 .song-item:hover {
     background-color: transparent; /* إزالة اللون الأبيض عند التمرير */
@@ -208,4 +208,21 @@ html, body {
 }
 a {
     -webkit-tap-highlight-color: transparent;
-  }
+}
+.song-slider-container {
+    overflow-x: auto; /* تمكين التمرير الأفقي */
+    white-space: nowrap; /* منع التفاف العناصر */
+}
+
+.song-item {
+    display: inline-block; /* عرض العناصر بشكل متجاور */
+    margin-right: 10px; /* مسافة بين العناصر */
+}
+.song-item.active {
+    color: rgb(255, 255, 255); /* تغيير لون النص إلى الأخضر */
+    font-weight: bold; /* جعل النص عريضًا لجعله بارزًا */
+    z-index: 2; /* جعل العنصر النشط في الأعلى */
+    font-size: 18.5px; /* زيادة حجم النص للأغنية النشطة */
+    transform: scale(1.15); /* تكبير النص بنسبة 10% */
+    text-shadow: 0 3px 10px green; /* إضافة ظل أبيض للنص */
+}
