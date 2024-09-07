@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="../styles.css">
 </head>
 <body style="justify-content: center;">
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+    <div id="content" style="display: none;">
     <div id="back"><a href="../index.html">
         <i class="fa-solid fa-right-to-bracket fa-fade fa-lg" style="color: #ffffff;"></i>
     </a></div>
@@ -166,6 +170,17 @@
                 <a href="https://www.facebook.com/ziad.74.72"> <i class="fa-brands fa-facebook" style="color: #ffffffd0;"></i></a>
                 <a href="https://www.tiktok.com/@eng._ziad"> <i class="fa-brands fa-tiktok"style="color: #ffffffd0;"></i></a>
                 </div>
+            </div>
+            <script src="../jquery-3.7.1.min.js"></script>
+            <script>
+                $(window).on('load', function() {
+                    // إخفاء اللودر وإظهار المحتوى
+                    $('.loader-wrapper').fadeOut('slow', function() {
+                        $('#content').fadeIn('slow');
+                    });
+                });
+            </script>
+            </script>
     <script src="script.js"></script>
 </body>
 </html>

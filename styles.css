@@ -144,7 +144,8 @@ button:hover {
     -webkit-overflow-scrolling: touch;
     padding: 10px;
     padding-bottom: 35px;
-    margin: 0;
+    margin-left: 35px;
+    margin-bottom: -35px;
     margin-top: -15px;
     scrollbar-width: none;
     width: 100%;
@@ -298,4 +299,77 @@ button {
         max-width: 40px;
         max-height: 40px;
     }
+}
+
+/* تنسيق عنصر الالتفاف لضمان تمركز اللودر في منتصف الصفحة */
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f000;
+    z-index: 9999; /* للتأكد من أن اللودر يظهر فوق المحتوى */
+}
+
+.loader {
+    width: 7em;
+    height: 5em;
+    position: relative;
+    animation: beat 1s infinite;
+}
+
+.loader::before,
+.loader::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 80px;
+    border-radius: 5em 5em 0 0;
+    animation: coldblue 1s infinite;
+}
+
+.loader::before {
+    left: 50px;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.loader::after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+@keyframes beat {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes coldblue {
+    0%, 100% {
+        background-color: rgb(255, 255, 255);
+    }
+
+    50% {
+        background-color: rgb(198, 23, 23);
+    }
+}
+
+/* لجعل المحتوى يظهر عند تحميل الصفحة */
+#content {
+    text-align: center;
 }

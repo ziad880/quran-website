@@ -8,7 +8,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body style="overflow-y: scroll;">
-<div>
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+    <div id="content" style="display: none;">
     <a style="text-decoration: none" href="alafasy/alafasy.html">    
         <div  class="player-container1">
         <img id="album-cover" src="alafasy/alafasy.png" alt="مشاري العفاسي">
@@ -45,6 +48,17 @@
 
     </div>
 </div>
-
+</div>
+</div>
+<script src="jquery-3.7.1.min.js"></script>
+<script>
+    $(window).on('load', function() {
+        // إخفاء اللودر وإظهار المحتوى
+        $('.loader-wrapper').fadeOut('slow', function() {
+            $('#content').fadeIn('slow');
+        });
+    });
+</script>
+</script>
 </body>
 </html>
