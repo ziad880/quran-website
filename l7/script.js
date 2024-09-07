@@ -291,7 +291,7 @@ shuffleBtn.addEventListener('click', toggleShuffle);
 loadSong(songs[songIndex]);
 // تعيين الصورة واسم الفنان مرة واحدة
 albumCover.src = 'l7.jpg'; // الصورة المشتركة
-artist.innerText = ' محمد اللحيدان ';   // الفنان المشترك
+artist.innerText = '  محمد اللحيدان ';   // الفنان المشترك
 
 // التعامل مع عناصر الأغاني
 const songButtons = document.querySelectorAll('.song-item');
