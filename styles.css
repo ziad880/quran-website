@@ -301,7 +301,7 @@ button {
     }
 }
 
-/* تنسيق عنصر الالتفاف لضمان تمركز اللودر في منتصف الصفحة */
+
 .loader-wrapper {
     position: fixed;
     top: 0;
@@ -312,7 +312,7 @@ button {
     justify-content: center;
     align-items: center;
     background-color: #f0f0f000;
-    z-index: 9999; /* للتأكد من أن اللودر يظهر فوق المحتوى */
+    z-index: 9999; 
 }
 
 .loader {
@@ -369,7 +369,6 @@ button {
     }
 }
 
-/* لجعل المحتوى يظهر عند تحميل الصفحة */
 #content {
     text-align: center;
 }
