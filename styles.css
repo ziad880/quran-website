@@ -383,7 +383,7 @@ background-color: #313131;
     padding: 30px 50px;
     transition: 0.5s;
      border-radius:10px 0  0 10px;
-margin-top: 3.5em;
+     margin-top: 3.5em;
 z-index: 5;
   }
   #menuToggle ul {
@@ -454,12 +454,13 @@ z-index: 5;
     opacity: 1;
     width: 40px;
     height: 32px;
-    z-index: 10;
+    z-index: 999;
     opacity: 0;
 
   }
   #menuToggle input:checked ~ #menu {
     transform: none;
+    
     
   }
   .sr {
@@ -507,6 +508,6 @@ z-index: 5;
 }
 .link-card a {
     text-decoration: none;
-    color: #666666; /* لون النص */
+    color: #383838; /* لون النص */
     font-weight: bold;
 }
