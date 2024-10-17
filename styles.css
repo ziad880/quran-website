@@ -371,3 +371,142 @@ button {
 #content {
     text-align: center;
 }
+
+#menu {
+    position: absolute;
+max-width: 200px;
+
+    top: 0;
+    right: 0;
+    transform: translateX(300px);
+background-color: #313131;
+    padding: 30px 50px;
+    transition: 0.5s;
+     border-radius:10px 0  0 10px;
+margin-top: 3.5em;
+z-index: 5;
+  }
+  #menuToggle ul {
+    text-align: center;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  
+  #menuToggle li {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    margin: 50px;
+    font-size: 12px;
+    margin: 0;
+
+    
+  }
+  
+  #menuToggle li :hover {
+    color: #949494;
+  }
+  #menuToggle .spans {
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    right: 6px;
+    top: 20px;
+    z-index: 1;
+  }
+  #menuToggle span {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 3px;
+    margin-bottom: 5px;
+    background: #fff;
+    border-radius: 10px;
+    transition: 0.5s;
+    
+  }
+  
+  #menuToggle input:checked ~ .spans span {
+    background: #ffffff;
+    z-index: 111;
+  }
+  #menuToggle input:checked ~ .spans span:first-child {
+    transform-origin: 25px 10px;
+    transform: rotate(-45deg);
+  }
+  #menuToggle input:checked ~ .spans span:nth-child(3) {
+    transform-origin: 21px -6px;
+    transform: rotate(45deg);
+  }
+  #menuToggle input:checked ~ .spans span:nth-child(2) {
+    opacity: 0;
+
+  }
+  
+  .in{
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    opacity: 1;
+    width: 40px;
+    height: 32px;
+    z-index: 10;
+    opacity: 0;
+
+  }
+  #menuToggle input:checked ~ #menu {
+    transform: none;
+    
+  }
+  .sr {
+    width: 100%; /* لجعل الحقل يأخذ عرض العنصر الأب */
+    text-align: right; /* محاذاة النص إلى اليمين */
+    padding: 10px 15px; /* مساحة داخلية */
+    border: 2px solid #11071f; /* لون الحدود */
+    border-radius: 8px; /* شكل دائري للحواف */
+    font-size: .7em; /* حجم الخط */
+    transition: border-color 0.3s, box-shadow 0.3s; /* تأثيرات الانتقال */
+}
+
+/* تأثير عند التركيز على الحقل */
+.sr {
+    border-color: #5c6bc0; /* تغيير لون الحدود عند التركيز */
+    box-shadow: 0 0 10px rgba(92, 107, 192, 0.5); /* تأثير ظل عند التركيز */
+    outline: none; /* إزالة إطار التركيز الافتراضي */
+    margin-bottom: 10px;
+}
+
+/* تغيير لون النص عند كتابة شيء */
+.sr::placeholder {
+    color: #aaa; /* لون النص في الحقل */
+    opacity: 1; /* التأكد من ظهور النص بشكل كامل */
+}
+.link-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+    justify-content: center; /* توسيط العناصر */
+    gap: 20px; /* المسافة بين المربعات */
+}
+.link-card {
+    background-color: #ffffff;
+    border: 2px solid #666666; /* لون الحدود */
+    border-radius: 12px; /* زوايا دائرية */
+    padding: 20px;
+    text-align: center;
+    width: 175px; /* عرض المربع */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s; /* تأثير التحريك عند التمرير */
+}
+.link-card:hover {
+    transform: translateY(-5px); /* رفع المربع عند التمرير */
+}
+.link-card a {
+    text-decoration: none;
+    color: #666666; /* لون النص */
+    font-weight: bold;
+}
