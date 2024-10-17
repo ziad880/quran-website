@@ -349,6 +349,12 @@
                 }
             });
         });
+        window.addEventListener('load', function() {
+    const menuCheckbox = document.getElementById('menuCheckbox');
+    // إعادة تعيين الحالة لإجبار القائمة على إعادة تحميلها
+    menuCheckbox.checked = false;
+});
+
             </script>
 
     <script src="script.js"></script>
