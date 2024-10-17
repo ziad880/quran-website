@@ -511,3 +511,8 @@ z-index: 5;
     color: #383838; /* لون النص */
     font-weight: bold;
 }
+.ll{
+    overflow-y: scroll ;
+    height: 95vh;
+    overflow-x: hidden;
+}
