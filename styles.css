@@ -498,8 +498,9 @@ z-index: 5;
 .link-card {
     background-color: #ffffff;
     border: 2px solid #666666; /* لون الحدود */
-    border-radius: 12px; /* زوايا دائرية */
-    padding: 20px;
+    border-radius: 8px; /* زوايا دائرية */
+    padding: 15px;
+    font-size: .5em;
     text-align: center;
     width: 175px; /* عرض المربع */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
